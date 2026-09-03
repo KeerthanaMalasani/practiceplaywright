@@ -12,7 +12,7 @@ test('Autosuggest dropdown', async ({ page }) => {
   const options: Locator = page.locator('ul>li');
 
   const count = await options.count();
-  console.log('Number of suggested options:', count);
+  console.log('Number of suggested optionsssss:', count);
 
   //printing all the suggested options  in the console
   console.log('5th option:', await options.nth(0).innerText());
