@@ -18,12 +18,27 @@ test("comparing methods ",async ({page})=>{
     }*/
 
         //2, allInnerText() vs alltextContent()
-        console .log("**comparing allInnerText() vs alltextContent()**")
+       /* console .log("**comparing allInnerText() vs alltextContent()**")
        
-        const productNames:string[]=await products.allInnerTexts()
+        //const productNames:string[]=await products.allInnerTexts()
       //  console.log("product  names all captured:",productNames)
- //const productNames: string[] = await products.allTextContents();
+ const productNames: string[] = await products.allTextContents();
  //console.log('product  names all captured:', productNames);
  const productTrimmed:string[]=productNames.map(text=>text.trim());
  console.log("product names after trimmed:",productTrimmed)
+ */
+
+ //3, all()
+
+const  productLocators:Locator[]=await products.all();
+console.log(productLocators);
+//for loop
+/*for(let productloc of productLocators){
+    console.log(await productloc.innerText());
+}*/
+//for in loop
+
+for(let i in  productLocators){
+    console.log(await productLocators[i].innerText());
+}
 })
